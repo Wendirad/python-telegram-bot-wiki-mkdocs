@@ -1,0 +1,46 @@
+site_name: python telegram bot wiki
+nav:
+    - Home: index.md
+    - 'Must read':
+        - 'Introduction to the API': 'Introduction-to-the-API.md'
+        - 'Tutorial: Your first bot': 'Extensions-–-Your-first-Bot.md'
+        - FAQ: 'Frequently-Asked-Questions.md'
+        - 'How to ask good questions': 'Ask-Right.md'
+    - 'Extensions':
+        - 'Job Queue': 'Extensions-–-JobQueue.md'
+        - 'Types of Handlers': 'Types-of-Handlers.md'
+        - 'Advanced Filters': 'Extensions-–-Advanced-Filters.md'
+        - 'Avoiding flood limits': 'Avoiding-flood-limits.md'
+        - 'Storing data': 'Storing-bot,-user-and-chat-related-data.md'
+        - 'Making your bot persistent': 'Making-your-bot-persistent.md'
+        - 'Adding Defaults': 'Adding-defaults-to-your-bot.md'
+    - 'Examples explained':
+        - 'InlineKeyboard Example': 'InlineKeyboard-Example.md'
+    - 'Code resources':
+        - 'Code snippets': 'Code-snippets.md'
+        - 'Exception Handling': 'Exception-Handling.md'
+        - 'Performance Optimizations': 'Performance-Optimizations.md'
+        - Webhooks: 'Webhooks.md'
+        - Defaults: 'Adding-defaults-to-your-bot.md'
+        - 'Writing Tests': 'Writing-Tests.md'
+        - 'Telegram Passport': 'Telegram-Passport.md'
+        - Examples: 'Examples.md'
+        - 'Related Projects': 'Related-Projects.md'
+        - Emoji: 'Emoji.md'
+    - Networking:
+        - 'Working Behind a Proxy': 'Working-Behind-a-Proxy.md'
+        - 'Handling network errors': 'Handling-network-errors.md'
+    - 'Other resources':
+        - 'Where to host Telegram Bots': 'Where-to-host-Telegram-Bots.md'
+        - 'How to host your bot': 'Hosting-your-bot.md'
+        - 'Notes on GAE': 'Notes-about-GAE---Google-App-Engine.md'
+        - 'Press': 'Press.md'
+        - 'Ask Support': 'Ask-Support.md'
+    - 'Transition Guides':
+        - 'Version 4': 'Transition-guide-to-Version-4.0.md'
+        - 'Version 5': 'Transition-guide-to-Version-5.0.md'
+        - 'Version 12': 'Transition-guide-to-Version-12.0.md'
+    - Administration:
+        - 'Test Bots': 'Internal-test-bots.md'
+        - 'How To Release': 'Releasing-a-new-version.rest'
+theme:  windmill-dark

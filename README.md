@@ -12,5 +12,5 @@ A python-telegram-bot wiki repository with mkdocs configuration to run locally.
 - run __mkdocs serve__
 
 ### Screenshoot
-![screenshoot1]()
-![screenshoot2]()
+![screenshoot1](docs/img/screenshoot-1.png)
+![screenshoot2](docs/img/screenshoot-1.png)

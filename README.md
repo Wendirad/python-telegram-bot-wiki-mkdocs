@@ -11,6 +11,9 @@ A python-telegram-bot wiki repository with mkdocs configuration to run locally.
 - pip3 install -r requirments.txt
 - run __mkdocs serve__
 
+### Custumization
+> If you want to use default mkdocs themes edit mkdocs.yml file and remove *theme: windmill-dark* or replace *windmill-dark* with *readthedocs* to use default readthedocs theme. [Read more about MkDocs](https://www.mkdocs.org)
+
 ### Screenshoot
 ![screenshoot1](docs/img/screenshoot-1.png)
 ![screenshoot2](docs/img/screenshoot-2.png)

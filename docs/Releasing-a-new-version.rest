@@ -1,0 +1,103 @@
+Releasing a new version
+=======================
+
+This project adheres to the `Semantic Versioning`_ specification by Tom Preston-Werner.
+
+Releasing on Windows
+--------------------
+
+Creating a release on windows is inadvisable due to the limitations for setting file permissions on the Windows file-system. On Windows 10 you can install a native `Ubuntu shell`_ to solve this problem.
+Within the shell first run::
+
+$ umask 0022
+
+To make sure file permissions will be set right. then Clone the repo (or pull the latest master) and follow the steps below to package the library. Uploading can be done from within Windows again if you prefer.
+
+Requirements
+------------
+
+Packages::
+
+$ pip install -r requirements.txt -r requirements-dev.txt -r docs/requirements-docs.txt
+$ pip install wheel twine
+
+
+Process
+-------
+
+* Build documentation locally, fix any error & commit::
+
+  $ make -C docs/ html
+
+* Run tests, fix any error & commit::
+  
+  $ make test
+
+* Bump version:
+
+  * telegram/version.py
+  * docs/source/conf.py
+
+* Log changes to:
+
+  * CHANGES.rst
+
+  Since writing adding the correct links is a bit tiresome, here is a little `something`_ to help you with it.
+
+* Commit the version bump and CHANGEs.rst::
+
+  $ git commit -a -m 'Bump version to v<VERSION>'
+  
+* Build source distribution::
+
+  $ python setup.py sdist bdist_wheel
+  
+* Upload to PyPI (-s to sign the package with your GnuPG key)::
+ 
+  $ twine upload -s dist/python*
+  
+* Push all changes
+
+  $ git push
+
+* Create a `new release`_:
+
+  * Tag version: v<VERSION>
+  * Release title: v<VERSION>
+  * Description: <logs from CHANGES.rst>
+  * create sha1 signature:
+    ```bash
+    sha1sum --binary dist/python-telegram-bot-X.Y.tar.gz > dist/python-telegram-bot-X.Y.tar.gz.sha1
+    ```
+  * Upload the source distribution from pypi as binary attachment + asc (gpg signature) + sha1 (create it yourself).
+
+* Trigger documentation rebuild::
+
+* On `Readthedocs dashboard`_ trigger a build for stable release (you'd probably need to do it twice: check the git revision being built to make sure it's the right one).
+
+* `Close milestones`_ for this version.
+
+* Test in a clean virtualenv that ``pip install python-telegram-bot`` works with the new version.
+
+
+Public Announcements
+--------------------
+
+Please use the following channels/groups to announce a new version release:
+
+* `@pythontelegrambotchannel`_
+* `@pythontelegrambotgroup`_ (Channel posts are automatically forwarded to here)
+
+Channel posts should be a bit more verbose than the plain release notes. E.g. they can
+
+* list the (non-dev-team) authors, who contributed to the release, maybe even for each PR
+* have a short, informative description of new/changed features
+
+.. _`Semantic Versioning`: http://semver.org/
+.. _`New release`: https://github.com/python-telegram-bot/python-telegram-bot/releases/new
+.. _`Close milestones`: https://github.com/python-telegram-bot/python-telegram-bot/milestones
+.. _`@pythontelegrambotgroup`: https://telegram.me/pythontelegrambotgroup
+.. _`@pythontelegrambotchannel`: https://telegram.me/pythontelegrambotchannel
+.. _`Readthedocs dashboard`: https://readthedocs.org/projects/python-telegram-bot/
+.. _`Ubuntu shell`: https://www.howtogeek.com/249966/how-to-install-and-use-the-linux-bash-shell-on-windows-10/
+.. _`something`: https://github.com/Bibo-Joshi/ptb-changelog-helper

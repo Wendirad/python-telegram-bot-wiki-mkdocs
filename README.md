@@ -1,5 +1,5 @@
 # python-telegram-bot-wiki-mkdocs
-A python-telegram-bot wiki repository with mkdocs configuration to run locally.   
+A [python-telegram-bot wiki](https://github.com/python-telegram-bot/python-telegram-bot/wiki) repository with mkdocs configuration to run locally.   
 
 ## Quick Start
 
